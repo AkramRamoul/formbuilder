@@ -13,7 +13,7 @@ type DesignerContextType = {
   elements: FormElementInstance[];
   addElement: (index: number, element: FormElementInstance) => void;
   removeElement: (id: string) => void;
-
+  setElements: Dispatch<SetStateAction<FormElementInstance[]>>;
   selectedElement: FormElementInstance | null;
   setSelectedElement: Dispatch<SetStateAction<FormElementInstance | null>>;
   updateElement: (id: string, element: FormElementInstance) => void;
@@ -57,6 +57,7 @@ export default function DesignerContextProvider({
         selectedElement,
         setSelectedElement,
         updateElement,
+        setElements,
       }}
     >
       {children}
