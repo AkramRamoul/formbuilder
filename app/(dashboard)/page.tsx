@@ -94,7 +94,7 @@ function StatsCards(props: StatsCardsProps) {
   );
 }
 
-function StatsCard({
+export function StatsCard({
   title,
   icon,
   helperText,
