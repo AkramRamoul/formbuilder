@@ -104,12 +104,14 @@ function FormSubmitComp({
           disabled={pending}
           className="mt-8"
           onClick={() => {
-            startTransition(submitForm);
-            submitForm();
+            startTransition(() => {
+              submitForm();
+            });
           }}
         >
           {!pending && (
             <>
+              Submit
               <HiCursorClick className="mr-2 " />
             </>
           )}

@@ -102,7 +102,6 @@ export async function UpdateFormContent(id: number, jsonContent: string) {
     },
     data: {
       content: jsonContent,
-      published: true,
     },
   });
 }

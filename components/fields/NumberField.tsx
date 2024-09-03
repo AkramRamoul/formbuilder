@@ -24,13 +24,15 @@ import {
 } from "../ui/form";
 import { Switch } from "../ui/switch";
 import { cn } from "@/lib/utils";
-const type: ElementsType = "TextField";
+import { Bs123 } from "react-icons/bs";
+
+const type: ElementsType = "NumberField";
 
 const extraAttributes = {
-  label: "Text Field",
+  label: "Number Field",
   helperText: "Helper text",
   required: false,
-  placeHolder: "Value here ...",
+  placeHolder: "0",
 };
 const propertiesSchema = z.object({
   label: z.string().min(2).max(50),
@@ -39,7 +41,7 @@ const propertiesSchema = z.object({
   placeHolder: z.string().max(50),
 });
 
-export const TextFieldFormElement: FormElement = {
+export const NumberFieldFormElement: FormElement = {
   type,
   construct: (id: string) => ({
     id,
@@ -47,8 +49,8 @@ export const TextFieldFormElement: FormElement = {
     extraAttributes,
   }),
   designerBtnElement: {
-    icon: MdTextFields,
-    label: "Text Field",
+    icon: Bs123,
+    label: "Number Field",
   },
   designerComponent: designerComponent,
   formComponent: FormComponent,
@@ -80,7 +82,7 @@ function designerComponent({
         {label}
         {required && "*"}
       </Label>
-      <Input readOnly disabled placeholder={placeHolder} />
+      <Input readOnly disabled type="number" placeholder={placeHolder} />
       {helperText && <p className="text-muted-foreground">{helperText}</p>}
     </div>
   );
@@ -113,6 +115,7 @@ function FormComponent({
         {required && "*"}
       </Label>
       <Input
+        type="number"
         id={element.id}
         className={cn(error && "border-red-500")}
         placeholder={placeHolder}
@@ -121,7 +124,10 @@ function FormComponent({
         }
         onBlur={(e: React.ChangeEvent<HTMLInputElement>) => {
           if (!submitValue) return;
-          const valid = TextFieldFormElement.validate(element, e.target.value);
+          const valid = NumberFieldFormElement.validate(
+            element,
+            e.target.value
+          );
           setError(!valid);
           if (!valid) return;
           submitValue(element.id, e.target.value);
@@ -255,8 +261,7 @@ function PropertiesComponent({
             >
               <div className="space-y-0.5">
                 <FormLabel>required</FormLabel>
-
-                <FormDescription>is this field required</FormDescription>
+                <FormDescription>is this field required ?</FormDescription>
               </div>
               <FormControl>
                 <Switch
