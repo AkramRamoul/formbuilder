@@ -1,4 +1,3 @@
-import { UserButton } from "@clerk/nextjs";
 import React, { ReactNode } from "react";
 import ThemeSwitcher from "@/components/ThemSwitcher";
 import Logo from "@/components/Logo";
