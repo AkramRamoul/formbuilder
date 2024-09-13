@@ -146,7 +146,7 @@ async function SubmissionsTable({ id }: { id: number }) {
   return (
     <>
       <h1 className="text-2xl font-bold my-4 ">Submissions</h1>
-      <div className="rounded-md border">
+      <div className="rounded-md border mb-24">
         <Table>
           <TableHeader>
             <TableRow>
