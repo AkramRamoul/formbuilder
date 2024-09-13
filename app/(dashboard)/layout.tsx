@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           <UserButton afterSignOutUrl="/sign-in" />
         </div>
       </nav>
-      <main className="flex w-full flex-grow">{children}</main>
+      <main className="flex w-full flex-grow mb-12">{children}</main>
     </div>
   );
 }
