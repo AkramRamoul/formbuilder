@@ -25,7 +25,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="container pt-4">
+    <div className="container pt-4 mb-12">
       <Suspense fallback={<StatsCards loading={true} />}>
         <CardsStatsWraper />
       </Suspense>
