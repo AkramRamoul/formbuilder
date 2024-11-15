@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Form Builder
 
-First, run the development server:
+
+A dynamic and customizable form-building application designed to empower users to create, edit, and render forms with ease. This project leverages modern web technologies to provide a seamless and secure user experience.
+
+
+
+## Features
+
+- Dynamic Form Creation: Build custom forms effortlessly with a drag-and-drop interface powered by DND-kit.
+- Database Integration: Fetch and store form data dynamically using PostgreSQL and Prisma ORM.
+- Secure Authentication: User access and sessions managed with Clerk for robust security.
+- Efficient Database Queries: Optimized database performance for faster rendering of user-generated forms.
+- Modern UI: Styled with TailwindCSS and Shadcn UI for a polished look and feel.
+
+- Light and dark mode toggle
+
+- interactive with all screens
+## Tech Stack
+
+- Frontend: Next.js, TypeScript, TailwindCSS, Shadcn UI
+- Database: PostgreSQL with Prisma ORM
+- State Management: React Context
+- Drag-and-Drop: DND-kit
+- Authentication: Clerk
+- Deployment: Vercel
+- Version Control: GitHub
+## Installation
+
+Install my-project with npm
+
+```bash
+git clone https://github.com/AkramRamoul/formbuilder.git
+
+cd formbuilder
+
+npm install
+```
+
+Run database migrations:
+
+```bash
+npx prisma migrate dev
+```
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+## Environment Variables
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To run this project, you will need to add the following environment variables to your .env file
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
+`CLERK_SECRET_KEY`
+`NEXT_PUBLIC_CLERK_SIGN_IN_URL`
+`NEXT_PUBLIC_CLERK_SIGN_UP_URL`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+`NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL`
+`NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL`
+`POSTGRES_PRISMA_URL`
+`POSTGRES_URL_NON_POOLING`
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
