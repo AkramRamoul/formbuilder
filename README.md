@@ -4,7 +4,8 @@
 
 A dynamic and customizable form-building application designed to empower users to create, edit, and render forms with ease. This project leverages modern web technologies to provide a seamless and secure user experience.
 
-This project is deployed via Vercel. Check out the live demo [here]([https://akramramoul.github.io/React_Kanban_Board](https://formbuilder-xcuz.vercel.app/).
+This project is deployed via GitHub Pages. Check out the live demo [here](https://formbuilder-xcuz.vercel.app/).
+
 
 
 
